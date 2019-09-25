@@ -1,9 +1,12 @@
 <resources>
 <!--    TITLE/BANNER STRINGS-->
+    <!--Todo: Think about a better title-->
     <string name="app_name">untitled</string>
 <!--    TITLE/BANNER STRINGS-->
 <!--    DYNAMIC STRINGS    -->
-    <string name="gold_str">Amount of Gold Goes Here</string>
+    <!--Todo: Use Dynamic String were possible-->
+    <!--Todo: Change gold_str-->
+    <string name="gold_str">%d</string>
 <!--    DYNAMIC STRINGS    -->
 <!--    BUTTON STRINGS-->
     <string name="basic_str" >Most Basic Click</string>
