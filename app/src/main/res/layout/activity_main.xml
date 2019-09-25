@@ -2,31 +2,56 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".MainActivity">
+
+    <!--Todo: Constrain Views-->
+    <!--Todo: Consider using a Linear or Non Constrained Layout-->
+
+    <!--Todo: Try to animate with the sprite sheet-->
 
     <TextView
         android:id="@+id/gold_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/gold_str" />
+        android:layout_marginStart="196dp"
+        android:layout_marginLeft="196dp"
+        android:layout_marginTop="162dp"
+        android:layout_marginEnd="197dp"
+        android:layout_marginRight="197dp"
+        android:text="@string/gold_str"
+        app:layout_constraintBottom_toTopOf="@+id/clickers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anim_view" />
 
     <ImageView
         android:id="@+id/anim_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="142dp"
+        android:layout_marginLeft="142dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginRight="168dp"
+        app:layout_constraintBottom_toTopOf="@+id/gold_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/idle"
-        tools:layout_editor_absoluteX="140dp" />
+        app:srcCompat="@drawable/idle" />
 
     <ScrollView
         android:id="@+id/clickers"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:layout_marginTop="54dp"
         android:isScrollContainer="true"
-        tools:layout_editor_absoluteX="204dp"
-        tools:layout_editor_absoluteY="32dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gold_view">
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -1,6 +1,7 @@
 package com.jhoney.untitled.GameStart;
 
 //LOCAL IMPORTS
+import com.jhoney.untitled.Helper;
 import com.jhoney.untitled.Player.Player;
 import com.jhoney.untitled.Clickers.Clicker;
 //LOCAL IMPORTS
@@ -9,10 +10,11 @@ import java.util.ArrayList;
 
 public class GameStart {
     //PROPERTIES
-    Player livePlayer;
-    ArrayList<Clicker> allClickers;
+    public Player livePlayer;
+    public ArrayList<Clicker> allClickers;
 
     //FOR DEBUGGING
+    //Todo: Delete bug on completion
     public int bug;
 
     //CONSTRUCTORS
@@ -31,5 +33,9 @@ public class GameStart {
             Clicker senior_master = new Clicker(200,"SeniorMaster");
             Clicker chief_master = new Clicker(300,"ChiefMaster");
         };
+
+
+        //Todo: Delete bug on completion
+        bug = Helper.randomInt(0,30);
     }
 }
