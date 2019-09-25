@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 //LOCAL IMPORTS
 import com.jhoney.untitled.GameStart.GameStart;
+import com.jhoney.untitled.Player.Player;
 //LOCAL IMPORTS
 
 
@@ -19,7 +20,6 @@ public class MainActivity extends AppCompatActivity
 
     //DECLARATIONS
     GameStart game;
-    Helper help;
 
     TextView gold_view;
     ImageView anim_view;
@@ -33,15 +33,20 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         game = new GameStart();
-        help = new Helper();
+        Helper.printGame(game);
+        Helper.setGame(this, game);
         Helper.setPlayer(this, game.livePlayer);
+        Player mainPlayer = Helper.getPlayer(this);
         gold_view = findViewById(R.id.gold_view);
-        gold_view.setText(getString(R.string.gold_str, game.livePlayer.gold));
+        gold_view.setText(getString(R.string.gold_str, mainPlayer.gold));
         //Todo: Connect Buttons to Clickers
         //Todo: Connect everything to event handlers
 
         basic_btn = findViewById(R.id.basic_btn);
         basic_btn.setOnClickListener(this);
+
+        btn = findViewById(R.id.btn);
+        btn.setOnClickListener(this);
 
         first_class_btn = findViewById(R.id.first_class_btn);
         first_class_btn.setOnClickListener(this);
@@ -72,7 +77,17 @@ public class MainActivity extends AppCompatActivity
         switch (v.getId())
         {
             case R.id.basic_btn:
-                ;
+                Player pLoc = Helper.getPlayer(this);
+                GameStart gLoc = Helper.getGame(this);
+                Helper.printGame(gLoc);
+                pLoc.gold += gLoc.allClickers.get(0).gold_click;
+                Helper.printAny(pLoc.gold);
+                Helper.setPlayer(this, pLoc);
+
+
+                gold_view = findViewById(R.id.gold_view);
+                gold_view.setText(getString(R.string.gold_str, pLoc.gold));
+
                 break;
         }
     }

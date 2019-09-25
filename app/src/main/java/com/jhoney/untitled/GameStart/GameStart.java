@@ -34,6 +34,8 @@ public class GameStart {
             Clicker chief_master = new Clicker(300,"ChiefMaster");
         };
 
+        allClickers.add(new Clicker(1,"Basic"));
+
 
         //Todo: Delete bug on completion
         bug = Helper.randomInt(0,30);
