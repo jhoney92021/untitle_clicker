@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/gold_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gold_str" />
+
+    <ImageView
+        android:id="@+id/anim_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/idle"
+        tools:layout_editor_absoluteX="140dp" />
+
+    <ScrollView
+        android:id="@+id/clickers"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:isScrollContainer="true"
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="32dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/basic_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/basic_str" />
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sub_standard_str" />
+
+            <Button
+                android:id="@+id/first_class_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/standard_str" />
+
+            <Button
+                android:id="@+id/senior_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/upgrade_standard_str" />
+
+            <Button
+                android:id="@+id/staff_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/staff_str" />
+
+            <Button
+                android:id="@+id/technical_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/technical_str" />
+
+            <Button
+                android:id="@+id/master_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/master_str" />
+
+            <Button
+                android:id="@+id/senior_master_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/senior_master_str" />
+
+            <Button
+                android:id="@+id/chief_master_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/chief_master_str" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,19 @@
+<resources>
+<!--    TITLE/BANNER STRINGS-->
+    <string name="app_name">untitled</string>
+<!--    TITLE/BANNER STRINGS-->
+<!--    DYNAMIC STRINGS    -->
+    <string name="gold_str">Amount of Gold Goes Here</string>
+<!--    DYNAMIC STRINGS    -->
+<!--    BUTTON STRINGS-->
+    <string name="basic_str" >Most Basic Click</string>
+    <string name="sub_standard_str" >Sub Standard Click</string>
+    <string name="standard_str" >Click</string>
+    <string name="upgrade_standard_str" >Upgrade Click</string>
+    <string name="staff_str" >Staff Click</string>
+    <string name="technical_str" >Technical Click</string>
+    <string name="master_str" >Master Click</string>
+    <string name="senior_master_str" >Senior Master Click</string>
+    <string name="chief_master_str" >Chief Master Click</string>
+ <!--    BUTTON STRINGS-->
+</resources>
