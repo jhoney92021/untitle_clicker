@@ -8,6 +8,17 @@
     <!--Todo: Change gold_str-->
     <string name="gold_str">%d</string>
 <!--    DYNAMIC STRINGS    -->
+<!--    PURCHASE STRINGS-->
+    <string name="basic_purchase">Buy One \n (Owned %d)</string>
+    <string name="sub_standard_purchase">Sub Standard \n (Cost 5)</string>
+    <string name="standard_purchase">Buy Clicks like a cheater</string>
+    <string name="upgraded_purchase">Buy Clicks like a cheater</string>
+    <string name="staff_purchase">Buy Clicks like a cheater</string>
+    <string name="tech_purchase">Buy Clicks like a cheater</string>
+    <string name="master_purchase">Buy Clicks like a cheater</string>
+    <string name="senior_master_purchase">Buy Clicks like a cheater</string>
+    <string name="chief_master_purchase">Buy Clicks like a cheater</string>
+<!--    PURCHASE STRINGS-->
 <!--    BUTTON STRINGS-->
     <string name="basic_str" >Most Basic Click</string>
     <string name="sub_standard_str" >Sub Standard Click</string>

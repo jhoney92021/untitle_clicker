@@ -8,6 +8,7 @@ public class Clicker {
     public int gold_click;
     public String rank_click;
 
+
     //FOR DEBUGGING
     //Todo: Delete bug on completion
     public int bug;

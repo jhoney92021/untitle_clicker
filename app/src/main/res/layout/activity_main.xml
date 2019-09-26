@@ -11,6 +11,7 @@
 
     <!--Todo: Try to animate with the sprite sheet-->
 
+
     <TextView
         android:id="@+id/gold_view"
         android:layout_width="wrap_content"
@@ -20,8 +21,9 @@
         android:layout_marginTop="162dp"
         android:layout_marginEnd="197dp"
         android:layout_marginRight="197dp"
+        android:layout_marginBottom="462dp"
         android:text="@string/gold_str"
-        app:layout_constraintBottom_toTopOf="@+id/clickers"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/anim_view" />
@@ -43,15 +45,97 @@
         app:srcCompat="@drawable/idle" />
 
     <ScrollView
-        android:id="@+id/clickers"
-        android:layout_width="match_parent"
+        android:id="@+id/clicker_store"
+        android:layout_width="200dp"
         android:layout_height="300dp"
-        android:layout_marginTop="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="316dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/clickers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anim_view">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/basic_purchase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/basic_purchase" />
+
+            <Button
+                android:id="@+id/sub_standard_purchase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sub_standard_purchase" />
+
+            <Button
+                android:id="@+id/standard_purchase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/standard_purchase" />
+
+            <Button
+                android:id="@+id/upgraded_purchase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/upgraded_purchase" />
+
+
+            <Button
+                android:id="@+id/staff_purchase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/staff_purchase" />
+
+            <Button
+                android:id="@+id/tech_purchase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tech_purchase" />
+
+            <Button
+                android:id="@+id/master_purchase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/master_purchase" />
+
+            <Button
+                android:id="@+id/senior_master_purchase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/senior_master_purchase" />
+
+            <Button
+                android:id="@+id/chief_master_purchase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/chief_master_purchase" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/clickers"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="316dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:isScrollContainer="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gold_view">
+        app:layout_constraintStart_toEndOf="@+id/clicker_store"
+        app:layout_constraintTop_toBottomOf="@+id/anim_view">
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.IdRes;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,26 @@ public class Helper extends AppCompatActivity
 
     //Todo: Remember to create helpers were possible
 
+    //Idle Helpers
+    public static int useClicks(Context context)
+    {
+        GameStart gameHelper = Helper.getGame(context);
+        int toReturn = 0;
+        if(gameHelper.livePlayer.owned_clicks.get("basic") > 0)
+        {
+            Helper.printGame(gameHelper);
+            Helper.printAny("inHelperClickValue", gameHelper.allClickers.get(0));
+            toReturn +=
+                    (gameHelper.allClickers.get(0).gold_click)*gameHelper.livePlayer.owned_clicks.get("basic");
+            Helper.printAny("inHelper",(gameHelper.allClickers.get(0).gold_click)*gameHelper.livePlayer.owned_clicks.get("basic"));
+
+
+            return toReturn;
+        }
+        else{ return toReturn;}
+    }
+    //Idle Helpers
+    
     //Game Helpers
     public static void setGame(Context context, GameStart gameStarted)
     {
@@ -81,11 +102,11 @@ public class Helper extends AppCompatActivity
         Log.d("printGame", return_json);
     }
 
-    public static void printAny(Object toPrint)
+    public static void printAny(String tag, Object toPrint)
     {
         Gson gson = new Gson();
         String return_json = gson.toJson(toPrint);
-        Log.d("printAny", return_json);
+        Log.d(tag, return_json);
     }
 
 }
