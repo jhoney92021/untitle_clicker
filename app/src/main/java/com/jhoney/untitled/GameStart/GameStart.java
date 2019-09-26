@@ -1,14 +1,19 @@
 package com.jhoney.untitled.GameStart;
 
 //LOCAL IMPORTS
+import android.content.Context;
+
 import com.jhoney.untitled.Helper;
 import com.jhoney.untitled.Player.Player;
 import com.jhoney.untitled.Clickers.Clicker;
 //LOCAL IMPORTS
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
-public class GameStart {
+public class GameStart
+{
     //PROPERTIES
     public Player livePlayer;
     public ArrayList<Clicker> allClickers;
@@ -39,5 +44,30 @@ public class GameStart {
 
         //Todo: Delete bug on completion
         bug = Helper.randomInt(0,30);
+    }
+
+
+
+    //DECLARATIONS
+    GameStart loopGame;
+    int playerGold = 0;
+    public int loop(final Context loopContext) {
+        //Todo: Delete this print statement on completion
+        Helper.printAny("inLoop", "GameLoop Entered");
+        new Timer().scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                loopGame = Helper.getGame(loopContext);
+                loopGame.livePlayer.gold += loopGame.allClickers.get(0).gold_click;
+                loopGame.livePlayer.gold += Helper.useClicks(loopContext);
+                playerGold = loopGame.livePlayer.gold;
+                Helper.setGame(loopContext, loopGame);
+
+                //Todo: Delete this print statement on completion
+                Helper.printAny("inLoopTimer", "GameLoop Running");
+            }
+        }, 0, 5000);
+
+        return playerGold;
     }
 }

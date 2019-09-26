@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 //LOCAL IMPORTS
 import com.jhoney.untitled.GameStart.GameStart;
+import com.jhoney.untitled.Observers.TextObserver;
 import com.jhoney.untitled.Player.Player;
 //LOCAL IMPORTS
 
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity
 
     //DECLARATIONS
     GameStart game;
+
+    TextObserver txtObs;
 
     TextView gold_view;
     ImageView anim_view;
@@ -46,8 +49,19 @@ public class MainActivity extends AppCompatActivity
         }
         Helper.setGame(this, game);
         Player mainPlayer = game.livePlayer;
+
+        //SET LOOP
+        int toPageGold = game.loop(this);
+        //SET LOOP
+        //SET OBSERVABLES
+        txtObs = new TextObserver();
+        //DEFAULTS FOR OBS
+        txtObs.setToObserve(null);
+        //SET OBSERVABLES
         gold_view = findViewById(R.id.gold_view);
-        gold_view.setText(getString(R.string.gold_str, game.livePlayer.gold));
+        gold_view.setText(getString(R.string.gold_str, toPageGold));
+//        txtObs.setToObserve(gold_view);
+
         //Todo: Connect Buttons to Clickers
         //Todo: Connect everything to event handlers
 
@@ -117,11 +131,15 @@ public class MainActivity extends AppCompatActivity
         switch (v.getId())
         {
             case R.id.basic_btn:
+                //Todo: Delete this print statement on completion
                 Helper.printGame(gLoc);
+                //Todo: Delete this print statement on completion
                 Helper.printAny("inSwitchClickValue", gLoc.allClickers.get(0));
                 gLoc.livePlayer.gold += gLoc.allClickers.get(0).gold_click;
                 gLoc.livePlayer.gold += Helper.useClicks(this);
+                //Todo: Delete this print statement on completion
                 Helper.printAny("inSwitchBtn",gLoc.livePlayer.gold);
+                //Todo: Delete this print statement on completion
                 Helper.printAny("inSwitchBtn",Helper.useClicks(this));
                 Helper.setGame(this, gLoc);
 
@@ -131,6 +149,7 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.basic_purchase:
+                //Todo: Delete this print statement on completion
                 Helper.printGame(gLoc);
                 if(gLoc.livePlayer.gold >= 1)
                 {
@@ -138,6 +157,7 @@ public class MainActivity extends AppCompatActivity
                     int numClick = gLoc.livePlayer.owned_clicks.get("basic");
                     numClick++;
                     gLoc.livePlayer.owned_clicks.put("basic",numClick);
+                    //Todo: Delete this print statement on completion
                     Helper.printAny("inSwitchPurchase",gLoc.livePlayer.gold);
                     Helper.setGame(this, gLoc);
 

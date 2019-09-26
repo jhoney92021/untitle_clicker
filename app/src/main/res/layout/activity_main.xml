@@ -11,7 +11,6 @@
 
     <!--Todo: Try to animate with the sprite sheet-->
 
-
     <TextView
         android:id="@+id/gold_view"
         android:layout_width="wrap_content"

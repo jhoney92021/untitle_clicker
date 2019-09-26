@@ -29,10 +29,13 @@ public class Helper extends AppCompatActivity
         int toReturn = 0;
         if(gameHelper.livePlayer.owned_clicks.get("basic") > 0)
         {
+            //Todo: Delete this print statement on completion
             Helper.printGame(gameHelper);
+            //Todo: Delete this print statement on completion
             Helper.printAny("inHelperClickValue", gameHelper.allClickers.get(0));
             toReturn +=
                     (gameHelper.allClickers.get(0).gold_click)*gameHelper.livePlayer.owned_clicks.get("basic");
+            //Todo: Delete this print statement on completion
             Helper.printAny("inHelper",(gameHelper.allClickers.get(0).gold_click)*gameHelper.livePlayer.owned_clicks.get("basic"));
 
 
